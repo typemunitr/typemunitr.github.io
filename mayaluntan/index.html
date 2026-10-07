@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="玛雅论坛索取指南 - 提供玛雅论坛入口、注册教程及账号获取建议，帮助用户安全访问社区资源，了解论坛版块功能与使用注意事项。">
+    <meta name="keywords" content="玛雅论坛索取,玛雅论坛入口,玛雅论坛注册,玛雅社区">
+    <title>玛雅论坛索取-社区入口与访问指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0 var(--spacing);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Layout */
+        main {
+            flex: 1;
+            max-width: var(--container-width);
+            width: 100%;
+            margin: 0 auto;
+            padding: var(--spacing);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid rgba(255,255,255,0.3);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: #fff;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+            nav ul {
+                margin-top: 10px;
+            }
+        }
+
+        /* Section Styles */
+        section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        /* Guide List */
+        .guide-list {
+            list-style: none;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .guide-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .guide-content strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .guide-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar Info */
+        .info-card {
+            background-color: #fff8e1;
+            border: 1px solid #ffe082;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            color: #f57f17;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .info-text {
+            font-size: 0.9rem;
+            color: #795548;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 5px;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 5px;
+            display: none;
+            padding-left: 10px;
+            border-left: 2px solid #ddd;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Icons placeholder */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <svg class="icon" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"></path>
+            </svg>
+            玛雅<span>论坛</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">版块导航</a></li>
+                <li><a href="#">使用帮助</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>寻找玛雅论坛入口与索取方法</h1>
+        <p>本文提供关于玛雅论坛的最新访问信息、社区索取方式及注册指南，帮助您安全、快速地加入讨论社区。</p>
+        <div>
+            <button class="btn" onclick="window.scrollTo(0, 500)">查看获取指南</button>
+            <button class="btn btn-secondary" onclick="window.open('https://www.google.com', '_blank')">搜索最新入口</button>
+        </div>
+    </section>
+
+    <div class="content-grid">
+        <!-- Left Column -->
+        <div class="main-column">
+            <section>
+                <h2>获取玛雅论坛的常用途径</h2>
+                <p style="margin-bottom: 20px; color: var(--text-light);">由于网络环境的特殊性，社区入口时常变更。以下是目前获取玛雅论坛访问权限的主要方式：</p>
+                <ul class="guide-list">
+                    <li class="guide-item">
+                        <div class="step-number">1</div>
+                        <div class="guide-content">
+                            <strong>官方渠道索取</strong>
+                            <p>关注玛雅社区官方发布的公告，通常通过指定社交媒体账号或合作网站发布最新的域名信息。</p>
+                        </div>
+                    </li>
+                    <li class="guide-item">
+                        <div class="step-number">2</div>
+                        <div class="guide-content">
+                            <strong>会员推荐链接</strong>
+                            <p>现有活跃会员通常会有推荐码或专属链接，通过老用户邀请注册可确保账号安全并避免封禁。</p>
+                        </div>
+                    </li>
+                    <li class="guide-item">
+                        <div class="step-number">3</div>
+                        <div class="guide-content">
+                            <strong>社区互助版块</strong>
+                            <p>在相关技术论坛或资源分享区的互助板块，用户常会发布最新的访问凭证或临时域名。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>注册与使用注意事项</h2>
+                <p style="margin-bottom: 20px; color: var(--text-light);">成功获取入口后，正确的注册流程和规则遵守对于长期使用至关重要。</p>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div class="guide-content">
+                            <strong>资料填写规范</strong>
+                            <p>注册时请确保填写真实有效的邮箱地址，以便接收验证码和找回密码。昵称请遵守社区规范。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-content">
+                            <strong>遵守版规</strong>
+                            <p>进入论坛后，请先阅读置顶公告和版块说明。禁止发布违规内容，以免导致账号被永久封禁。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-content">
+                            <strong>账号安全</strong>
+                            <p>不要在公共电脑上保存登录状态，定期更换密码，并警惕钓鱼网站模仿官方界面进行诈骗。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <aside class="sidebar">
+            <div class="info-card">
+                <div class="info-title">
+                    <svg class="icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+                    </svg>
+                    重要提示
+                </div>
+                <p class="info-text">由于网络监管要求，部分论坛入口可能需要特定的访问凭证或经过二次验证。请务必通过正规渠道获取。</p>
+            </div>
+
+            <section>
+                <h2>常见问题 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">如何确认入口是否有效？ <span>+</span></div>
+                    <div class="faq-answer">尝试访问链接，若提示404或连接超时，说明入口已失效，请等待管理员更新。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">注册后无法发帖怎么办？ <span>+</span></div>
+                    <div class="faq-answer">通常是因为账号未激活或处于新手保护期，请查看邮箱中的激活邮件或联系版主。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">忘记密码如何找回？ <span>+</span></div>
+                    <div class="faq-answer">在登录页面点击“忘记密码”，系统将发送重置链接至您注册时使用的邮箱。</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>社区版块概览</h2>
+                <ul style="list-style: none; padding-left: 5px;">
+                    <li style="margin-bottom: 8px; font-size: 0.9rem;">
+                        <a href="#" style="color: var(--primary-color); text-decoration: none;"># 资源分享区</a>
+                    </li>
+                    <li style="margin-bottom: 8px; font-size: 0.9rem;">
+                        <a href="#" style="color: var(--primary-color); text-decoration: none;"># 技术交流区</a>
+                    </li>
+                    <li style="margin-bottom: 8px; font-size: 0.9rem;">
+                        <a href="#" style="color: var(--primary-color); text-decoration: none;"># 情感倾诉区</a>
+                    </li>
+                    <li style="font-size: 0.9rem;">
+                        <a href="#" style="color: var(--primary-color); text-decoration: none;"># 招聘求职区</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="header-inner" style="justify-content: center; padding: 0;">
+        <p>&copy; 2023 玛雅论坛辅助指南. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.6;">本站仅提供信息整理与导航服务，不直接托管论坛内容。</p>
+    </div>
+</footer>
+
+<script>
+    function toggleFaq(element) {
+        const parent = element.parentElement;
+        parent.classList.toggle('active');
+        const icon = element.querySelector('span');
+        icon.textContent = parent.classList.contains('active') ? '-' : '+';
+    }
+</script>
+
+</body>
+</html>
