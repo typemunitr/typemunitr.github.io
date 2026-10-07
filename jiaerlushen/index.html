@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="加尔鲁什·地狱咆哮 - 沃尔甘族部落大酋长生平、执政理念、萨尔继承、审判与陨落的历史资料与资料库。">
+    <meta name="keywords" content="加尔鲁什, 魔兽世界, 沃尔甘, 部落大酋长, 卡利姆多, 萨尔, 伊瑟拉, 审判">
+    <title>加尔鲁什 - 魔兽世界历史资料库与人物生平</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1b1e24;
+            --text-main: #e0e0e0;
+            --text-muted: #9499a6;
+            --accent-red: #d32f2f;
+            --accent-gold: #cfaa6e;
+            --accent-blue: #4fc3f7;
+            --border-color: #2d333b;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15,17,21,0.3), var(--bg-color)), 
+                        url('https://picsum.photos/seed/warcraft/1920/1080.jpg') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg-color) 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        /* Timeline / Biography Grid */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .bio-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .bio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent-gold);
+        }
+
+        .card-header {
+            background-color: rgba(0,0,0,0.2);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-header h3 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        .card-header .year {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-family: monospace;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #1a1d24;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-main);
+        }
+
+        .quote-author {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Ideology & Philosophy */
+        .ideology-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ideology-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .ideology-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background-color: rgba(207, 170, 110, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid rgba(207, 170, 110, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .ideology-visual {
+            height: 400px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ideology-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        /* Conclusion / Aftermath */
+        .conclusion {
+            background: linear-gradient(45deg, #1b1e24, #252830);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0c0f;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .ideology-container { grid-template-columns: 1fr; gap: 2rem; }
+            nav { display: none; } /* Simplified for mobile demo */
+            .header-inner { justify-content: center; }
+            .section-title { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>World</span>History
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#bio" class="active">生平年表</a></li>
+                    <li><a href="#ideology">执政理念</a></li>
+                    <li><a href="#aftermath">审判与结局</a></li>
+                    <li><a href="#gallery">图鉴资料</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>加尔鲁什·地狱咆哮</h1>
+                <h2>Gul'dan the Betrayer</h2>
+                <p>兽人萨满祭司，部落大酋长。从被诅咒的奴隶到引发第二次战争，再到被伊瑟拉扭曲意志，最终在希尔斯布莱德陨落的悲剧英雄。</p>
+                <a href="#bio" class="btn">阅读生平</a>
+            </div>
+        </section>
+
+        <!-- Biography Section -->
+        <section id="bio">
+            <div class="container">
+                <div class="section-title">
+                    生平年表
+                    <span class="section-subtitle">关键历史节点与转折</span>
+                </div>
+                
+                <div class="bio-grid">
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">前序</span>
+                            <h3>被诅咒的兽人</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>加尔鲁什在兽人部落中原本是一个受压迫的奴隶。在基尔加丹的诱惑下，他成为了第一个被腐蚀的兽人萨满，喝下恶魔之血，从而开启了兽人部落的堕落之路。</p>
+                        </div>
+                    </article>
+
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">第二次战争</span>
+                            <h3>大酋长的崛起</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>作为第一个兽人术士，他建立了暗影议会，策划了黑石山的背叛，导致战歌氏族酋长奥格瑞姆·毁灭之锤的死亡。随后，他自立为大酋长，带领兽人军队横扫卡利姆多大陆。</p>
+                        </div>
+                    </article>
+
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">大灾变</span>
+                            <h3>伊瑟拉的囚徒</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>萨尔死后，加尔鲁什继任大酋长。在前往永恒之井的途中，他被上古之神的仆从伊瑟拉控制。为了获得击败联盟的力量，他囚禁了伊瑟拉并利用其梦境力量制造了翡翠梦境的梦魇，制造了大量的天灾军团生物。</p>
+                        </div>
+                    </article>
+
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">潘达利亚</span>
+                            <h3>血咒的暴君</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>在潘达利亚，加尔鲁什被锁链束缚，直到被部落和联盟的联军解救。他利用血咒强行征召兽人，尽管这种做法导致了部落的分裂，但他最终在莫尔古营地击败了卡雷苟斯，重掌大权。</p>
+                        </div>
+                    </article>
+
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">陨落</span>
+                            <h3>希尔斯布莱德的审判</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>在希尔斯布莱德的决战中，德拉诺的萨满之王卡德加集结了各路势力。加尔鲁什试图使用萨满之王的终极力量，但最终被卡德加和安杜因·乌瑞恩联手击败，并被卡德加亲手处决。</p>
+                        </div>
+                    </article>
+
+                    <article class="bio-card">
+                        <div class="card-header">
+                            <span class="year">结局</span>
+                            <h3>地狱咆哮的回响</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>加尔鲁什的死亡并非终点。在部落的灵魂之地，他的亡魂徘徊不去，最终被奥格瑞姆·毁灭之锤的幽灵指引，转生为一只新的地狱咆哮，继续他的复仇之路。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ideology Section -->
+        <section id="ideology">
+            <div class="container">
+                <div class="section-title">
+                    执政理念与争议
+                    <span class="section-subtitle">关于“为了部落”的极端诠释</span>
+                </div>
+
+                <div class="ideology-container">
+                    <div class="ideology-content">
+                        <h3>“为了部落”</h3>
+                        <p>加尔鲁什的执政核心是绝对的部落至上主义。他认为兽人必须摆脱萨尔那种软弱、包容的“和平主义”形象，重新找回兽人古老、野蛮但强大的本质。</p>
+                        <p>为了部落的生存，他愿意牺牲一切，包括部落的道德准则、盟友的利益甚至兽人自身的生命。他坚信只有通过绝对的力量和极权的统治，部落才能在充满敌意的世界中生存下去。</p>
+                        <p>这种极端的意识形态导致了部落内部的分裂，许多兽人（如沃金、凯恩·血蹄）拒绝追随他，转而支持萨尔或联盟。</p>
+                        
+                        <div class="tags">
+                            <span class="tag">部落至上</span>
+                            <span class="tag">极端民族主义</span>
+                            <span class="tag">强硬手段</span>
+                            <span class="tag">力量崇拜</span>
+                        </div>
+                    </div>
+                    <div class="ideology-visual">
+                        <img src="https://picsum.photos/seed/guldan/600/400.jpg" alt="加尔鲁什部下" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container">
+                <p class="quote-text">“你们以为我是为了荣耀而战？不！我这么做是为了部落。为了部落！为了部落！为了部落！”</p>
+                <p class="quote-author">—— 加尔鲁什·地狱咆哮</p>
+            </div>
+        </section>
+
+        <!-- Aftermath Section -->
+        <section id="aftermath" class="conclusion">
+            <div class="container">
+                <div class="section-title">
+                    审判与遗产
+                    <span class="section-subtitle">历史如何评价这位争议人物</span>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color:var(--accent-gold); margin-bottom:1rem;">争议性</h4>
+                        <p style="color:var(--text-muted);">加尔鲁什是魔兽世界历史中最具争议的角色之一。支持者认为他是为了部落的未来敢于承担骂名的领袖；反对者则认为他是一个制造战争、破坏和平的独裁者。</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-gold); margin-bottom:1rem;">剧情影响</h4>
+                        <p style="color:var(--text-muted);">他的行为直接导致了《大地的裂变》和《熊猫人之谜》两大资料片的核心冲突，深刻改变了艾泽拉斯的政治格局。</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-gold); margin-bottom:1rem;">角色成长</h4>
+                        <p style="color:var(--text-muted);">从被诅咒的奴隶到被扭曲的英雄，再到最终陨落的悲剧，加尔鲁什的故事探讨了自由意志、仇恨与救赎的复杂主题。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 300px;">
+                    <h4>WorldHistory 资料库</h4>
+                    <p>致力于收集整理游戏、历史与文学中的经典人物与事件。本站为粉丝非商业性质整理，所有内容版权归原作者所有。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>相关人物</h4>
+                    <ul>
+                        <li><a href="#">萨尔</a></li>
+                        <li><a href="#">奥格瑞姆·毁灭之锤</a></li>
+                        <li><a href="#">卡德加</a></li>
+                        <li><a href="#">伊瑟拉</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资料来源</h4>
+                    <ul>
+                        <li><a href="#">魔兽世界官方资料</a></li>
+                        <li><a href="#">魔兽编年史</a></li>
+                        <li><a href="#">WoW Wiki</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WorldHistory. All rights reserved. 此页面为静态展示页面。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
