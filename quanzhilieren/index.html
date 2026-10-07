@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全职猎人粤语 - 粤语版全职猎人观看与资源整理。提供经典的猎人考试、友克鑫市篇、贪婪之岛、嵌合蚁篇及选举篇的粤语配音资源、角色介绍及剧情分析。">
+    <meta name="keywords" content="全职猎人粤语, 粤语版全职猎人, 全职猎人粤语配音, 猎人考试, 贪婪之岛">
+    <title>全职猎人粤语-经典粤语配音资源与剧情解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 4px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary-color);
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: var(--spacing-sm);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .quality-tag {
+            font-size: 0.8rem;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .feature-item {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .feature-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Info Table */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .info-table th, .info-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: var(--spacing-md);
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-md) var(--spacing-md);
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: var(--spacing-md);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '▼';
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>🦊</span> 全职猎人粤语
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#resources">粤语资源</a></li>
+                    <li><a href="#features">版本特色</a></li>
+                    <li><a href="#guide">观看指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>重温经典，纯正粤语配音</h1>
+            <p>为您整理《全职猎人》系列最全的粤语配音资源，包括猎人考试篇、友克鑫市篇、贪婪之岛及选举篇，感受小杰与酷拉皮卡、雷欧力、奇犽的冒险旅程。</p>
+            <div class="hero-tags">
+                <span>猎人考试</span>
+                <span>友克鑫篇</span>
+                <span>贪婪之岛</span>
+                <span>嵌合蚁篇</span>
+                <span>选举篇</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2 class="section-title">热门粤语资源</h2>
+            <div class="resource-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/hunter1/400/250" alt="猎人考试篇封面">
+                        <span class="card-badge">连载中</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">猎人考试篇（粤语版）</h3>
+                        <p class="card-desc">故事的开端，小杰为了寻找父亲金，踏上了成为猎人的艰难旅程。包含考试中的各种考验与奇迹。</p>
+                        <div class="card-footer">
+                            <span class="quality-tag">画质：HD</span>
+                            <a href="#" class="btn">观看/下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/hunter2/400/250" alt="友克鑫市篇封面">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">友克鑫市篇（粤语版）</h3>
+                        <p class="card-desc">围绕着幻影旅团与友克鑫市拍卖会展开的激烈战斗。尼特罗会长与飞坦的对决，酷拉皮卡的复仇。</p>
+                        <div class="card-footer">
+                            <span class="quality-tag">画质：1080P</span>
+                            <a href="#" class="btn">观看/下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/hunter3/400/250" alt="贪婪之岛封面">
+                        <span class="card-badge">OVA</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">贪婪之岛（粤语版）</h3>
+                        <p class="card-desc">小杰等人获得游戏卡牌，进入游戏世界寻找安拉·米。这是小杰获得“念”的重要篇章。</p>
+                        <div class="card-footer">
+                            <span class="quality-tag">画质：高清</span>
+                            <a href="#" class="btn">观看/下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/hunter4/400/250" alt="嵌合蚁篇封面">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">嵌合蚁篇（粤语版）</h3>
+                        <p class="card-desc">蚁王诞生后的世界危机。雷翁力·揍敌客的登场，以及梅路艾姆的觉醒与死亡。</p>
+                        <div class="card-footer">
+                            <span class="quality-tag">画质：1080P</span>
+                            <a href="#" class="btn">观看/下载</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2 class="section-title">版本特色与优势</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>🎙️ 粤语原声</h3>
+                    <p>保留经典粤语配音阵容，熟悉的声音演绎经典角色，还原度极高，符合粤语地区观众的观看习惯。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎬 完整收录</h3>
+                    <p>覆盖漫画原作的所有重要篇章，包括动画未播出的精彩剧情，确保剧情连贯，无删减。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💻 多格式支持</h3>
+                    <p>提供MP4 MKV等多种格式下载，支持手机、电脑及平板设备播放，方便随时随地观看。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide">
+            <h2 class="section-title">观看指南与剧情简介</h2>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>篇章名称</th>
+                        <th>剧情简介</th>
+                        <th>推荐指数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>猎人考试篇</strong></td>
+                        <td>小杰为了寻找父亲，报名参加猎人考试。结识了酷拉皮卡、雷欧力和奇犽，展现了惊人的潜能。</td>
+                        <td>★★★★★</td>
+                    </tr>
+                    <tr>
+                        <td><strong>友克鑫市篇</strong></td>
+                        <td>为了寻找幻影旅团成员的线索，小杰等人前往友克鑫市。尼特罗会长与飞坦的惊天对决。</td>
+                        <td>★★★★★</td>
+                    </tr>
+                    <tr>
+                        <td><strong>贪婪之岛</strong></td>
+                        <td>获得游戏卡牌后，小杰进入游戏世界。在此过程中领悟了“强化系”能力，并寻找安拉·米。</td>
+                        <td>★★★★☆</td>
+                    </tr>
+                    <tr>
+                        <td><strong>嵌合蚁篇</strong></td>
+                        <td>蚁王诞生，人类面临巨大危机。雷欧力·揍敌客登场，以及梅路艾姆的觉醒与死亡。</td>
+                        <td>★★★★★</td>
+                    </tr>
+                    <tr>
+                        <td><strong>选举篇</strong></td>
+                        <td>为了寻找父亲，小杰参加第13届猎人考试。通过能力测试，获得成为正式猎人的资格。</td>
+                        <td>★★★★☆</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">常见问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">全职猎人粤语配音演员是谁？</div>
+                <div class="faq-answer">
+                    <p>全职猎人粤语版由香港TVB配音。主要配音演员包括小杰（黄子敬）、酷拉皮卡（陈卓智）、奇犽（梁伟德）等。这些声音陪伴了一代观众成长。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">哪里可以观看完整的粤语版全职猎人？</div>
+                <div class="faq-answer">
+                    <p>本站提供整理好的粤语版资源下载与在线观看链接。请留意版权信息，支持正版，或寻找官方流媒体平台（如Netflix等）的正版资源。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">贪婪之岛是动画原创吗？</div>
+                <div class="faq-answer">
+                    <p>《贪婪之岛》是基于原作游戏篇改编的OVA（原创动画录像带），虽然部分剧情与漫画有出入，但极大地丰富了角色对游戏的理解和念能力的展示。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何判断粤语配音的质量？</div>
+                <div class="faq-answer">
+                    <p>优质的粤语配音通常保留原作角色的性格特征，台词翻译地道自然，情感表达准确。本站提供的资源均为经过筛选的高清版本。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 全职猎人粤语资源站. 仅供学习交流使用，请支持正版漫画与动画。</p>
+            <p>本站内容整理自网络，版权归原作者所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
