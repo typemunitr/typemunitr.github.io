@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天尊重生无弹窗 - 提供无弹窗、无广告干扰的《天尊重生》小说在线阅读体验。收录章节全集，支持夜间模式，阅读流畅，纯净界面。">
+    <meta name="keywords" content="天尊重生无弹窗, 天尊重生小说, 在线阅读, 无广告小说, 阅读神器">
+    <title>天尊重生无弹窗 - 纯净无干扰在线阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #9b59b6;
+            --accent-color: #f1c40f;
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --text-main: #ecf0f1;
+            --text-muted: #bdc3c7;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(22, 33, 62, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            outline: none;
+            width: 150px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(142, 68, 173, 0.2);
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 3rem 0;
+        }
+
+        .book-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #2c3e50;
+        }
+
+        .book-info {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .book-author {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .book-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .rating {
+            color: var(--accent-color);
+        }
+
+        .status {
+            color: #2ecc71;
+        }
+
+        /* Feature Section */
+        .features {
+            background-color: #0f1526;
+            padding: 4rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Chapter List */
+        .chapter-list-section {
+            padding: 3rem 0;
+        }
+
+        .chapter-list {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .chapter-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-link {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .chapter-link:hover {
+            color: var(--primary-color);
+        }
+
+        .chapter-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 3rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1526;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+
+            .search-bar {
+                order: 2;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .book-cover {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>天尊重生无弹窗</span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#hot">热门推荐</a></li>
+                    <li><a href="#list">章节目录</a></li>
+                    <li><a href="#faq">阅读指南</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" placeholder="搜索小说...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>天尊重生</h1>
+                <p>极致纯净阅读体验，告别弹窗广告干扰。收录《天尊重生》全集章节，为您打造沉浸式玄幻小说阅读空间。</p>
+                <div class="hero-tags">
+                    <span class="tag">无弹窗</span>
+                    <span class="tag">无广告</span>
+                    <span class="tag">极速加载</span>
+                    <span class="tag">夜间模式</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Books Grid -->
+        <section id="hot" class="container">
+            <div class="section-title">
+                <span>热门推荐</span>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="book-grid">
+                <!-- Book 1 -->
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/tianzun1/300/400" alt="天尊重生封面" class="book-cover">
+                    <div class="book-info">
+                        <h2 class="book-title">天尊重生</h2>
+                        <p class="book-author">作者：未知</p>
+                        <div class="book-meta">
+                            <span class="rating">★★★★☆ 9.2</span>
+                            <span class="status">连载中</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 2 -->
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/tianzun2/300/400" alt="玄幻小说封面" class="book-cover">
+                    <div class="book-info">
+                        <h2 class="book-title">异界之天尊归来</h2>
+                        <p class="book-author">作者：星辰</p>
+                        <div class="book-meta">
+                            <span class="rating">★★★★☆ 8.8</span>
+                            <span class="status">已完结</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 3 -->
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/tianzun3/300/400" alt="修仙小说封面" class="book-cover">
+                    <div class="book-info">
+                        <h2 class="book-title">太古天尊</h2>
+                        <p class="book-author">作者：古道西风</p>
+                        <div class="book-meta">
+                            <span class="rating">★★★★★ 9.5</span>
+                            <span class="status">连载中</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book 4 -->
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/tianzun4/300/400" alt="仙侠小说封面" class="book-cover">
+                    <div class="book-info">
+                        <h2 class="book-title">至尊剑神</h2>
+                        <p class="book-author">作者：剑行天下</p>
+                        <div class="book-meta">
+                            <span class="rating">★★★★☆ 8.5</span>
+                            <span class="status">连载中</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚫</div>
+                        <h3>纯净无弹窗</h3>
+                        <p>严格过滤所有弹窗广告，采用极简设计，让您的阅读视线不被干扰，专注剧情本身。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速加载</h3>
+                        <p>优化服务器响应速度，秒开章节内容，支持夜间护眼模式，随时随地畅享阅读。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>全平台适配</h3>
+                        <p>完美支持手机、平板及电脑端浏览，响应式布局确保在任何设备上都有良好体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter List -->
+        <section id="list" class="container chapter-list-section">
+            <div class="section-title">
+                <span>最新章节</span>
+                <a href="#">章节目录 &rarr;</a>
+            </div>
+            
+            <div class="chapter-list">
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千二百章 混乱之始</span>
+                    <span class="chapter-date">2023-10-24</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十九章 道祖的邀请</span>
+                    <span class="chapter-date">2023-10-23</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十八章 岁月长河</span>
+                    <span class="chapter-date">2023-10-22</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十七章 境界突破</span>
+                    <span class="chapter-date">2023-10-21</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十六章 旧友重逢</span>
+                    <span class="chapter-date">2023-10-20</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十五章 天尊令</span>
+                    <span class="chapter-date">2023-10-19</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十四章 异变突起</span>
+                    <span class="chapter-date">2023-10-18</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-link">第一千一百九十三章 神秘古地</span>
+                    <span class="chapter-date">2023-10-17</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container faq-section">
+            <div class="section-title">
+                <span>阅读指南</span>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">为什么选择无弹窗阅读？</div>
+                <div class="faq-answer">弹窗广告不仅影响阅读体验，还可能携带恶意代码。我们致力于提供干净、安全的阅读环境，让您专注于故事内容。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">《天尊重生》的剧情简介是什么？</div>
+                <div class="faq-answer">主角在经历了无数岁月的沉淀后，于混沌中重生。面对曾经失去的一切，他如何重掌天尊之位，再踏巅峰之路？请移步正文阅读。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">如何切换夜间模式？</div>
+                <div class="faq-answer">点击页面右上角的设置图标（或浏览器设置中的夜间模式），即可将页面背景调整为深色护眼模式。</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">专注提供高质量、无干扰的小说阅读服务，打造最纯粹的在线书库。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">全站搜索</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>免责声明</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 天尊重生无弹窗阅读网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Sticky Header Effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.3)";
+                } else {
+                    header.style.boxShadow = "none";
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
