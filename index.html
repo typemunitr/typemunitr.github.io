@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="惠尚学官方首页，提供专业的在线教育平台，涵盖职业技能培训、兴趣课程及学历提升服务，致力于打造高效、实用的学习社区。">
+    <meta name="keywords" content="惠尚学,在线教育,职业技能,兴趣课程,学历提升,在线学习平台">
+    <title>惠尚学-专业在线教育与技能提升服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --primary-dark: #357ABD;
+            --secondary-color: #F5F7FA;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #E1E4E8;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(74, 144, 226, 0.05);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Categories */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Course Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s;
+        }
+
+        .course-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            background: rgba(74, 144, 226, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            height: 2.8em;
+            overflow: hidden;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .teacher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .teacher-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FF5722;
+        }
+
+        .price.free {
+            color: #4CAF50;
+        }
+
+        /* Features */
+        .features {
+            background: var(--secondary-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-text h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #2C3E50;
+            color: #BDC3C7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .search-box input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                惠尚学
+                <span>教育</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">职业培训</a></li>
+                    <li><a href="#">兴趣课程</a></li>
+                    <li><a href="#">学历提升</a></li>
+                    <li><a href="#">名师讲堂</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>让学习更简单，让成长更高效</h1>
+                <p>汇聚全网优质课程资源，为您提供从职业技能到兴趣爱好的全方位学习解决方案。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索您想学的课程，例如：Python、插画设计、会计...">
+                    <button>立即搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>合作院校</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10,000+</h3>
+                        <p>精品课程</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2,000万+</h3>
+                        <p>注册学员</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>学员好评率</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门学习分类</h2>
+                    <p>根据您的职业发展和个人兴趣，找到最适合的课程</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="category-icon">💻</span>
+                        <h3>计算机技术</h3>
+                        <p>编程开发、数据分析、网络安全</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">📊</span>
+                        <h3>财务金融</h3>
+                        <p>会计实操、CPA考试、理财投资</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🎨</span>
+                        <h3>艺术设计</h3>
+                        <p>平面设计、UI/UX、摄影后期</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">📈</span>
+                        <h3>市场营销</h3>
+                        <p>SEO优化、新媒体运营、电商</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🗣️</span>
+                        <h3>语言学习</h3>
+                        <p>英语口语、小语种、商务英语</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🧠</span>
+                        <h3>职场管理</h3>
+                        <p>团队领导、项目管理、沟通技巧</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🏠</span>
+                        <h3>生活技能</h3>
+                        <p>烹饪美食、家居收纳、心理咨询</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🎓</span>
+                        <h3>学历提升</h3>
+                        <p>自考、成考、研究生入学考试</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses -->
+        <section class="section" style="background-color: var(--secondary-color);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选好课推荐</h2>
+                    <p>由行业专家精心打造，助您快速掌握核心技能</p>
+                </div>
+                <div class="course-grid">
+                    <!-- Course 1 -->
+                    <article class="course-card">
+                        <img src="https://picsum.photos/seed/code/400/250" alt="Python数据分析实战" class="course-img">
+                        <div class="course-content">
+                            <span class="course-tag">计算机</span>
+                            <h3 class="course-title">Python数据分析与机器学习实战：从入门到精通</h3>
+                            <div class="course-meta">
+                                <span>124课时</span>
+                                <span>3.2万人学习</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="teacher">
+                                    <img src="https://picsum.photos/seed/t1/50/50" alt="讲师头像" class="teacher-avatar">
+                                    <span>李老师</span>
+                                </div>
+                                <span class="price">¥199</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course 2 -->
+                    <article class="course-card">
+                        <img src="https://picsum.photos/seed/design/400/250" alt="UI设计全能班" class="course-img">
+                        <div class="course-content">
+                            <span class="course-tag">设计</span>
+                            <h3 class="course-title">2024零基础UI/UX设计全能班：Figma实战教学</h3>
+                            <div class="course-meta">
+                                <span>86课时</span>
+                                <span>5.8万人学习</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="teacher">
+                                    <img src="https://picsum.photos/seed/t2/50/50" alt="讲师头像" class="teacher-avatar">
+                                    <span>王设计师</span>
+                                </div>
+                                <span class="price">¥299</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course 3 -->
+                    <article class="course-card">
+                        <img src="https://picsum.photos/seed/finance/400/250" alt="初级会计实务" class="course-img">
+                        <div class="course-content">
+                            <span class="course-tag">财会</span>
+                            <h3 class="course-title">2024初级会计职称备考通关班</h3>
+                            <div class="course-meta">
+                                <span>200课时</span>
+                                <span>1.2万人学习</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="teacher">
+                                    <img src="https://picsum.photos/seed/t3/50/50" alt="讲师头像" class="teacher-avatar">
+                                    <span>张会计</span>
+                                </div>
+                                <span class="price">¥99</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course 4 -->
+                    <article class="course-card">
+                        <img src="https://picsum.photos/seed/marketing/400/250" alt="短视频运营" class="course-img">
+                        <div class="course-content">
+                            <span class="course-tag">运营</span>
+                            <h3 class="course-title">抖音/快手短视频爆款打造与变现全攻略</h3>
+                            <div class="course-meta">
+                                <span>45课时</span>
+                                <span>8.5万人学习</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="teacher">
+                                    <img src="https://picsum.photos/seed/t4/50/50" alt="讲师头像" class="teacher-avatar">
+                                    <span>刘运营</span>
+                                </div>
+                                <span class="price free">免费</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择惠尚学</h2>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎯</div>
+                        <div class="feature-text">
+                            <h3>精准课程推荐</h3>
+                            <p>基于大数据分析，根据您的职业规划和兴趣标签，智能推荐最适合的课程内容。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎓</div>
+                        <div class="feature-text">
+                            <h3>真人名师授课</h3>
+                            <p>严选行业一线专家、高校教授及实战派讲师，确保教学内容的专业性与实用性。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🔄</div>
+                        <div class="feature-text">
+                            <h3>灵活学习方式</h3>
+                            <p>支持手机、平板、电脑多端同步学习，随时随地回放复习，碎片化时间也能高效利用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>开启您的学习之旅</h2>
+                <p>注册即送新人礼包，海量免费试听课程等您来拿</p>
+                <button class="btn" style="background: white; color: var(--primary-color);">立即免费注册</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        惠尚学
+                        <span style="color: #BDC3C7;">教育</span>
+                    </div>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        惠尚学致力于构建高质量的在线教育生态圈，通过互联网技术连接优质教育资源与渴望成长的学员，让学习不再有门槛。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">名师团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方QQ群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 惠尚学教育平台 版权所有 | 京ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                         </html>
